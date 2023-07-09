@@ -7,7 +7,7 @@
 
 import Foundation
 extension ContentView{
-    @MainActor class ViewModel: ObservableObject {
+    @MainActor class ViewModel: ObservableObject  {
      
         let savePath = FileManager.documentDirectory.appendingPathComponent("SavedEvent")
         
@@ -36,10 +36,14 @@ extension ContentView{
             }
         }
         
-        func addEvent(){
-            let newEvent = Event(name: eventName, people: [])
+        func addEvent(_ event: Event){
+            let newEvent = event
             events.append(newEvent)
             save()
+        }
+        
+        func removeRows (at offsets: IndexSet) {
+            events.remove(atOffsets: offsets)
         }
         
     }

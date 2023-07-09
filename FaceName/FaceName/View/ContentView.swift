@@ -13,14 +13,22 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            List(0..<3){name in
-                NavigationLink{Text("Event \(name)")}
-            label: {
-                
-                Text("Event \(name)")
+            List{
+                ForEach(viewModel.events.sorted().reversed(), id: \.id) {  event in
+                    NavigationLink{
+                        EventView(event: event)
+                    }
+                label: {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(event.name)
+                            .font(.title2.bold())
+                        Text(event.date, style: .date)
+                            .font(.caption)
+                    }
+                }
+                }
+                .onDelete(perform: viewModel.removeRows)
             }
-            }
-            .scrollContentBackground(.hidden)
             
             .navigationTitle("FaceName")
             
@@ -31,6 +39,11 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
+                }
+            }
+            .sheet(isPresented: $viewModel.addViewIsShowed) {
+                AddEventView() { event in
+                    viewModel.addEvent(event)
                 }
             }
         }

@@ -10,5 +10,8 @@ import SwiftUI
 
 struct Person: Codable {
     var id = UUID()
-    var name: String
+    var firstName: String
+    var lastName: String
+    var company: String?
+
 }
