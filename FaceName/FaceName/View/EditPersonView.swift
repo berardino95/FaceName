@@ -1,17 +1,17 @@
 //
-//  AddPeopleView.swift
+//  PersonDetailView.swift
 //  FaceName
 //
-//  Created by Berardino Chiarello on 09/07/23.
+//  Created by Berardino Chiarello on 10/07/23.
 //
 
 import SwiftUI
 
-struct AddPersonView: View {
+struct EditPersonView: View {
     
+    var event: Event
+    var person: Person
     
-    @Environment(\.dismiss) var dismiss
-    @Binding var event: Event
     @ObservedObject var viewModel : ContentView.ViewModel
     
     @State private var firstName = ""
@@ -20,6 +20,7 @@ struct AddPersonView: View {
     @State private var isShowingPhotoPicker = false
     @State private var avatarImage : UIImage?
     
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         Group{
@@ -47,7 +48,7 @@ struct AddPersonView: View {
                 }
                 
                 Section {
-                    Button ("Add") {
+                    Button ("Save") {
                         var newPerson = Person(firstName: "", lastName: "", base64Avatar: "")
                         newPerson.firstName = firstName
                         newPerson.lastName = lastName
@@ -64,10 +65,23 @@ struct AddPersonView: View {
             }
         }
     }
+    
+    init(event: Event, person: Person,viewModel: ContentView.ViewModel, firsName: String, lastName: String, company: String, avatarImage: UIImage?){
+        self.event = event
+        self.person = person
+        self.viewModel = viewModel
+        
+        _firstName = State(initialValue: person.firstName)
+        _lastName = State(initialValue: person.lastName)
+        _company = State(initialValue: person.company ?? "")
+        _avatarImage = State(initialValue: person.avatarImage)
+
+    }
+    
 }
 
-struct AddPersonView_Previews: PreviewProvider {
+struct EditPersonView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPersonView(event: .constant(Event.example), viewModel: ContentView.ViewModel())
+        EditPersonView(event: Event.example , person: Person.example , viewModel: ContentView.ViewModel(), firsName: "Berardino", lastName: "Chiarello", company: "Sky", avatarImage: nil)
     }
 }

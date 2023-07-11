@@ -18,6 +18,12 @@
 		5FB91A112A57FED100E42C29 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A102A57FED100E42C29 /* AddEventView.swift */; };
 		5FB91A132A5B4BAC00E42C29 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A122A5B4BAC00E42C29 /* EventView.swift */; };
 		5FB91A152A5B57FB00E42C29 /* AddPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A142A5B57FB00E42C29 /* AddPersonView.swift */; };
+		5FB91A172A5C9C9900E42C29 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A162A5C9C9900E42C29 /* PhotoPicker.swift */; };
+		5FB91A192A5CA0E400E42C29 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A182A5CA0E400E42C29 /* AvatarView.swift */; };
+		5FB91A1B2A5CA68600E42C29 /* Base64-Encoding-Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A1A2A5CA68600E42C29 /* Base64-Encoding-Decoding.swift */; };
+		5FB91A1D2A5CB13400E42C29 /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A1C2A5CB13400E42C29 /* EditPersonView.swift */; };
+		5FB91A1F2A5D430700E42C29 /* DetailPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */; };
+		5FB91A222A5D468900E42C29 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A212A5D468900E42C29 /* ListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,12 @@
 		5FB91A102A57FED100E42C29 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		5FB91A122A5B4BAC00E42C29 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		5FB91A142A5B57FB00E42C29 /* AddPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonView.swift; sourceTree = "<group>"; };
+		5FB91A162A5C9C9900E42C29 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		5FB91A182A5CA0E400E42C29 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		5FB91A1A2A5CA68600E42C29 /* Base64-Encoding-Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Base64-Encoding-Decoding.swift"; sourceTree = "<group>"; };
+		5FB91A1C2A5CB13400E42C29 /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
+		5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPersonView.swift; sourceTree = "<group>"; };
+		5FB91A212A5D468900E42C29 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,8 @@
 		5FB91A052A56AC0000E42C29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5FB91A1A2A5CA68600E42C29 /* Base64-Encoding-Decoding.swift */,
+				5FB91A162A5C9C9900E42C29 /* PhotoPicker.swift */,
 				5FB91A072A56AC3700E42C29 /* Event.swift */,
 				5FB91A092A56AC4B00E42C29 /* Person.swift */,
 			);
@@ -94,11 +108,12 @@
 			isa = PBXGroup;
 			children = (
 				5FB919F72A569F7000E42C29 /* FaceNameApp.swift */,
-				5FB919F92A569F7000E42C29 /* ContentView.swift */,
-				5FB91A0B2A56ADB100E42C29 /* ContentView-ViewModel.swift */,
-				5FB91A102A57FED100E42C29 /* AddEventView.swift */,
+				5FB91A202A5D461800E42C29 /* ContentView */,
 				5FB91A122A5B4BAC00E42C29 /* EventView.swift */,
 				5FB91A142A5B57FB00E42C29 /* AddPersonView.swift */,
+				5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */,
+				5FB91A1C2A5CB13400E42C29 /* EditPersonView.swift */,
+				5FB91A182A5CA0E400E42C29 /* AvatarView.swift */,
 				5FB91A0D2A56AED500E42C29 /* Utilities */,
 			);
 			path = View;
@@ -110,6 +125,25 @@
 				5FB91A0E2A56AEF500E42C29 /* FileManager-DocumentsDirectory.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5FB91A202A5D461800E42C29 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				5FB919F92A569F7000E42C29 /* ContentView.swift */,
+				5FB91A0B2A56ADB100E42C29 /* ContentView-ViewModel.swift */,
+				5FB91A212A5D468900E42C29 /* ListRowView.swift */,
+				5FB91A232A5D46FD00E42C29 /* AddEvent */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		5FB91A232A5D46FD00E42C29 /* AddEvent */ = {
+			isa = PBXGroup;
+			children = (
+				5FB91A102A57FED100E42C29 /* AddEventView.swift */,
+			);
+			path = AddEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,13 +217,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB91A0F2A56AEF500E42C29 /* FileManager-DocumentsDirectory.swift in Sources */,
+				5FB91A1D2A5CB13400E42C29 /* EditPersonView.swift in Sources */,
+				5FB91A222A5D468900E42C29 /* ListRowView.swift in Sources */,
 				5FB91A112A57FED100E42C29 /* AddEventView.swift in Sources */,
 				5FB919FA2A569F7000E42C29 /* ContentView.swift in Sources */,
+				5FB91A1F2A5D430700E42C29 /* DetailPersonView.swift in Sources */,
 				5FB91A082A56AC3700E42C29 /* Event.swift in Sources */,
+				5FB91A1B2A5CA68600E42C29 /* Base64-Encoding-Decoding.swift in Sources */,
+				5FB91A192A5CA0E400E42C29 /* AvatarView.swift in Sources */,
 				5FB91A0C2A56ADB100E42C29 /* ContentView-ViewModel.swift in Sources */,
 				5FB91A0A2A56AC4B00E42C29 /* Person.swift in Sources */,
 				5FB919F82A569F7000E42C29 /* FaceNameApp.swift in Sources */,
 				5FB91A132A5B4BAC00E42C29 /* EventView.swift in Sources */,
+				5FB91A172A5C9C9900E42C29 /* PhotoPicker.swift in Sources */,
 				5FB91A152A5B57FB00E42C29 /* AddPersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

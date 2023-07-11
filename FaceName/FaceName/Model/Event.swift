@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Event: Codable, Comparable {
+struct Event: Codable, Comparable, Identifiable {
 
     var id = UUID()
     var name: String
@@ -16,7 +16,7 @@ struct Event: Codable, Comparable {
     
     static var emptyExample = Event(name: "Test",date: Date.now, people: [])
     
-    static var example = Event(name: "Test",date: Date.now, people: [Person(firstName: "Mario", lastName: "Rossi"), Person(firstName: "Mario", lastName: "Rossi"), Person(firstName: "Mario", lastName: "Rossi")] )
+    static var example = Event(name: "Test",date: Date.now, people: [Person(firstName: "Mario", lastName: "Rossi", base64Avatar: ""), Person(firstName: "Mario", lastName: "Rossi", base64Avatar: ""), Person(firstName: "Mario", lastName: "Rossi", base64Avatar: "")] )
 
     static func < (lhs: Event, rhs: Event) -> Bool {
         lhs.date < rhs.date

@@ -8,14 +8,15 @@
 import Foundation
 extension ContentView{
     @MainActor class ViewModel: ObservableObject  {
-     
+        
         let savePath = FileManager.documentDirectory.appendingPathComponent("SavedEvent")
         
         @Published var events = [Event]()
         
+        
         @Published var eventName = ""
         
-        //Add sheet
+        //Add sheet presented
         @Published  var addViewIsShowed = false
         
         init(){
@@ -36,14 +37,27 @@ extension ContentView{
             }
         }
         
+        func addPerson (event: Event, person: Person) {
+            if let index = events.firstIndex(of: event) {
+                events[index].people.append(person)
+                save()
+            }
+        }
+        
+        func removePerson (event: Event, person: Person){
+            if let eventIndex = events.firstIndex(of: event) {
+                var event = events[eventIndex]
+                if let personIndex = event.people.firstIndex(of: person) {
+                    event.people.remove(at: personIndex)
+                }
+                save()
+            }
+        }
+        
         func addEvent(_ event: Event){
             let newEvent = event
             events.append(newEvent)
             save()
-        }
-        
-        func removeRows (at offsets: IndexSet) {
-            events.remove(atOffsets: offsets)
         }
         
     }

@@ -14,24 +14,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(viewModel.events.sorted().reversed(), id: \.id) {  event in
+                
+                ForEach($viewModel.events, id: \.id) { $event in
                     NavigationLink{
-                        EventView(event: event)
+                        EventView(event: $event, viewModel: viewModel)
                     }
                 label: {
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(event.name)
-                            .font(.title2.bold())
-                        Text(event.date, style: .date)
-                            .font(.caption)
-                    }
+                    ListRowView(event: event)
                 }
                 }
-                .onDelete(perform: viewModel.removeRows)
+                .onDelete(perform: removeRows)
+                
             }
-            
             .navigationTitle("FaceName")
-            
             .toolbar {
                 ToolbarItem (placement: .navigationBarTrailing) {
                     Button {
@@ -47,6 +42,10 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    
+    func removeRows (at offsets: IndexSet) {
+        viewModel.events.remove(atOffsets: offsets)
     }
 }
 
