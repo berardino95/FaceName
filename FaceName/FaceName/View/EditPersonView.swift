@@ -9,10 +9,12 @@ import SwiftUI
 
 struct EditPersonView: View {
     
+    
+    
+    @EnvironmentObject var eventsManager : EventsManager
+    
     var event: Event
     var person: Person
-    
-    @ObservedObject var viewModel : ContentView.ViewModel
     
     @State private var firstName = ""
     @State private var lastName = ""
@@ -49,27 +51,28 @@ struct EditPersonView: View {
                 
                 Section {
                     Button ("Save") {
-                        var newPerson = Person(firstName: "", lastName: "", base64Avatar: "")
-                        newPerson.firstName = firstName
-                        newPerson.lastName = lastName
-                        newPerson.base64Avatar = avatarImage?.base64 ?? ""
+                        var updatedPerson = Person(firstName: "", lastName: "", base64Avatar: "")
+                        updatedPerson.firstName = firstName
+                        updatedPerson.lastName = lastName
+                        updatedPerson.company = company
+                        updatedPerson.base64Avatar = avatarImage?.base64 ?? ""
                         
-                        viewModel.addPerson(event: event, person: newPerson)
+                        eventsManager.updatePerson(event: event, person: person, newPerson: updatedPerson)
                         dismiss()
                     }
                 }
                 
             }
+            .autocorrectionDisabled(true)
             .sheet(isPresented: $isShowingPhotoPicker) {
                 PhotoPicker(avatarImage: $avatarImage)
             }
         }
     }
     
-    init(event: Event, person: Person,viewModel: ContentView.ViewModel, firsName: String, lastName: String, company: String, avatarImage: UIImage?){
+    init(event: Event, person: Person){
         self.event = event
         self.person = person
-        self.viewModel = viewModel
         
         _firstName = State(initialValue: person.firstName)
         _lastName = State(initialValue: person.lastName)
@@ -82,6 +85,6 @@ struct EditPersonView: View {
 
 struct EditPersonView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPersonView(event: Event.example , person: Person.example , viewModel: ContentView.ViewModel(), firsName: "Berardino", lastName: "Chiarello", company: "Sky", avatarImage: nil)
+        EditPersonView(event: Event.example , person: Person.example)
     }
 }

@@ -12,7 +12,8 @@ struct AddPersonView: View {
     
     @Environment(\.dismiss) var dismiss
     @Binding var event: Event
-    @ObservedObject var viewModel : ContentView.ViewModel
+    
+    @EnvironmentObject var eventsManager : EventsManager
     
     @State private var firstName = ""
     @State private var lastName = ""
@@ -51,14 +52,16 @@ struct AddPersonView: View {
                         var newPerson = Person(firstName: "", lastName: "", base64Avatar: "")
                         newPerson.firstName = firstName
                         newPerson.lastName = lastName
+                        newPerson.company = company
                         newPerson.base64Avatar = avatarImage?.base64 ?? ""
                         
-                        viewModel.addPerson(event: event, person: newPerson)
+                        eventsManager.addPerson(event: event, person: newPerson)
                         dismiss()
                     }
                 }
                 
             }
+            .autocorrectionDisabled(true)
             .sheet(isPresented: $isShowingPhotoPicker) {
                 PhotoPicker(avatarImage: $avatarImage)
             }
@@ -68,6 +71,6 @@ struct AddPersonView: View {
 
 struct AddPersonView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPersonView(event: .constant(Event.example), viewModel: ContentView.ViewModel())
+        AddPersonView(event: .constant(Event.example))
     }
 }

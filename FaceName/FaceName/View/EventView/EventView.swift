@@ -9,8 +9,9 @@ import SwiftUI
 
 struct EventView: View {
     
+    @EnvironmentObject var eventsManager : EventsManager
+    
     @Binding var event: Event
-    @ObservedObject var viewModel : ContentView.ViewModel
     @State private var AddPersonIsShowed = false
     
     let layout = [ GridItem(.flexible(minimum: 70)), GridItem(.flexible(minimum: 70)), GridItem(.flexible(minimum: 70))]
@@ -61,13 +62,13 @@ struct EventView: View {
             }
         }
         .sheet(isPresented: $AddPersonIsShowed) {
-            AddPersonView(event: $event, viewModel: viewModel)
+            AddPersonView(event: $event)
         }
     }
 }
 
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
-        EventView(event: .constant(Event.example), viewModel: ContentView.ViewModel())
+        EventView(event: .constant(Event.example))
     }
 }

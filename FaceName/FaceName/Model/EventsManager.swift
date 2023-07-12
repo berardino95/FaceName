@@ -6,8 +6,9 @@
 //
 
 import Foundation
-extension ContentView{
-    @MainActor class ViewModel: ObservableObject  {
+import SwiftUI
+
+@MainActor class EventsManager: ObservableObject  {
         
         let savePath = FileManager.documentDirectory.appendingPathComponent("SavedEvent")
         
@@ -46,19 +47,25 @@ extension ContentView{
         
         func removePerson (event: Event, person: Person){
             if let eventIndex = events.firstIndex(of: event) {
-                var event = events[eventIndex]
                 if let personIndex = event.people.firstIndex(of: person) {
-                    event.people.remove(at: personIndex)
+                    events[eventIndex].people.remove(at: personIndex)
+                    save()
                 }
+            }
+        }
+    
+    func updatePerson(event: Event, person: Person, newPerson: Person){
+        if let eventIndex = events.firstIndex(of: event) {
+            if let personIndex = event.people.firstIndex(of: person) {
+                events[eventIndex].people[personIndex] = newPerson
                 save()
             }
         }
+    }
         
         func addEvent(_ event: Event){
             let newEvent = event
             events.append(newEvent)
             save()
         }
-        
     }
-}

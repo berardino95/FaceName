@@ -13,7 +13,7 @@
 		5FB919FF2A569F7200E42C29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB919FE2A569F7200E42C29 /* Preview Assets.xcassets */; };
 		5FB91A082A56AC3700E42C29 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A072A56AC3700E42C29 /* Event.swift */; };
 		5FB91A0A2A56AC4B00E42C29 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A092A56AC4B00E42C29 /* Person.swift */; };
-		5FB91A0C2A56ADB100E42C29 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A0B2A56ADB100E42C29 /* ContentView-ViewModel.swift */; };
+		5FB91A0C2A56ADB100E42C29 /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A0B2A56ADB100E42C29 /* EventsManager.swift */; };
 		5FB91A0F2A56AEF500E42C29 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A0E2A56AEF500E42C29 /* FileManager-DocumentsDirectory.swift */; };
 		5FB91A112A57FED100E42C29 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A102A57FED100E42C29 /* AddEventView.swift */; };
 		5FB91A132A5B4BAC00E42C29 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A122A5B4BAC00E42C29 /* EventView.swift */; };
@@ -24,6 +24,7 @@
 		5FB91A1D2A5CB13400E42C29 /* EditPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A1C2A5CB13400E42C29 /* EditPersonView.swift */; };
 		5FB91A1F2A5D430700E42C29 /* DetailPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */; };
 		5FB91A222A5D468900E42C29 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A212A5D468900E42C29 /* ListRowView.swift */; };
+		5FB91A272A5D497700E42C29 /* EventView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A262A5D497700E42C29 /* EventView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,7 @@
 		5FB919FE2A569F7200E42C29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5FB91A072A56AC3700E42C29 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Event.swift; path = FaceName/Model/Event.swift; sourceTree = SOURCE_ROOT; };
 		5FB91A092A56AC4B00E42C29 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		5FB91A0B2A56ADB100E42C29 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		5FB91A0B2A56ADB100E42C29 /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
 		5FB91A0E2A56AEF500E42C29 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		5FB91A102A57FED100E42C29 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		5FB91A122A5B4BAC00E42C29 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		5FB91A1C2A5CB13400E42C29 /* EditPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonView.swift; sourceTree = "<group>"; };
 		5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPersonView.swift; sourceTree = "<group>"; };
 		5FB91A212A5D468900E42C29 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		5FB91A262A5D497700E42C29 /* EventView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				5FB91A162A5C9C9900E42C29 /* PhotoPicker.swift */,
 				5FB91A072A56AC3700E42C29 /* Event.swift */,
 				5FB91A092A56AC4B00E42C29 /* Person.swift */,
+				5FB91A0B2A56ADB100E42C29 /* EventsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,7 +112,8 @@
 			children = (
 				5FB919F72A569F7000E42C29 /* FaceNameApp.swift */,
 				5FB91A202A5D461800E42C29 /* ContentView */,
-				5FB91A122A5B4BAC00E42C29 /* EventView.swift */,
+				5FB91A232A5D46FD00E42C29 /* AddEvent */,
+				5FB91A282A5D497D00E42C29 /* EventView */,
 				5FB91A142A5B57FB00E42C29 /* AddPersonView.swift */,
 				5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */,
 				5FB91A1C2A5CB13400E42C29 /* EditPersonView.swift */,
@@ -131,9 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB919F92A569F7000E42C29 /* ContentView.swift */,
-				5FB91A0B2A56ADB100E42C29 /* ContentView-ViewModel.swift */,
 				5FB91A212A5D468900E42C29 /* ListRowView.swift */,
-				5FB91A232A5D46FD00E42C29 /* AddEvent */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";
@@ -144,6 +146,15 @@
 				5FB91A102A57FED100E42C29 /* AddEventView.swift */,
 			);
 			path = AddEvent;
+			sourceTree = "<group>";
+		};
+		5FB91A282A5D497D00E42C29 /* EventView */ = {
+			isa = PBXGroup;
+			children = (
+				5FB91A122A5B4BAC00E42C29 /* EventView.swift */,
+				5FB91A262A5D497700E42C29 /* EventView-ViewModel.swift */,
+			);
+			path = EventView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB91A0F2A56AEF500E42C29 /* FileManager-DocumentsDirectory.swift in Sources */,
+				5FB91A272A5D497700E42C29 /* EventView-ViewModel.swift in Sources */,
 				5FB91A1D2A5CB13400E42C29 /* EditPersonView.swift in Sources */,
 				5FB91A222A5D468900E42C29 /* ListRowView.swift in Sources */,
 				5FB91A112A57FED100E42C29 /* AddEventView.swift in Sources */,
@@ -225,7 +237,7 @@
 				5FB91A082A56AC3700E42C29 /* Event.swift in Sources */,
 				5FB91A1B2A5CA68600E42C29 /* Base64-Encoding-Decoding.swift in Sources */,
 				5FB91A192A5CA0E400E42C29 /* AvatarView.swift in Sources */,
-				5FB91A0C2A56ADB100E42C29 /* ContentView-ViewModel.swift in Sources */,
+				5FB91A0C2A56ADB100E42C29 /* EventsManager.swift in Sources */,
 				5FB91A0A2A56AC4B00E42C29 /* Person.swift in Sources */,
 				5FB919F82A569F7000E42C29 /* FaceNameApp.swift in Sources */,
 				5FB91A132A5B4BAC00E42C29 /* EventView.swift in Sources */,

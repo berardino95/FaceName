@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel = ViewModel()
+    
+    @StateObject var eventsManager = EventsManager()
     
     var body: some View {
         NavigationView{
             List{
                 
-                ForEach($viewModel.events, id: \.id) { $event in
+                ForEach($eventsManager.events, id: \.id) { $event in
                     NavigationLink{
-                        EventView(event: $event, viewModel: viewModel)
+                        EventView(event: $event)
                     }
                 label: {
                     ListRowView(event: event)
@@ -30,22 +31,27 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem (placement: .navigationBarTrailing) {
                     Button {
-                        viewModel.addViewIsShowed = true
+                        eventsManager.addViewIsShowed = true
                     } label: {
                         Image(systemName: "plus")
                     }
                 }
             }
-            .sheet(isPresented: $viewModel.addViewIsShowed) {
+            
+            .toolbar{
+                EditButton()
+            }
+            .sheet(isPresented: $eventsManager.addViewIsShowed) {
                 AddEventView() { event in
-                    viewModel.addEvent(event)
+                    eventsManager.addEvent(event)
                 }
             }
         }
+        .environmentObject(eventsManager)
     }
     
     func removeRows (at offsets: IndexSet) {
-        viewModel.events.remove(atOffsets: offsets)
+        eventsManager.events.remove(atOffsets: offsets)
     }
 }
 
