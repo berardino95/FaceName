@@ -51,7 +51,7 @@ struct EditPersonView: View {
                 
                 Section {
                     Button ("Save") {
-                        var updatedPerson = Person(firstName: "", lastName: "", base64Avatar: "")
+                        var updatedPerson = Person(firstName: "", lastName: "", base64Avatar: "", latitude: person.latitude, longitude: person.longitude)
                         updatedPerson.firstName = firstName
                         updatedPerson.lastName = lastName
                         updatedPerson.company = company

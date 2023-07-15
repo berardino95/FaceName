@@ -25,6 +25,7 @@
 		5FB91A1F2A5D430700E42C29 /* DetailPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */; };
 		5FB91A222A5D468900E42C29 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A212A5D468900E42C29 /* ListRowView.swift */; };
 		5FB91A272A5D497700E42C29 /* EventView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A262A5D497700E42C29 /* EventView-ViewModel.swift */; };
+		5FB91A2C2A5F4D6D00E42C29 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB91A2B2A5F4D6D00E42C29 /* LocationFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		5FB91A1E2A5D430700E42C29 /* DetailPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPersonView.swift; sourceTree = "<group>"; };
 		5FB91A212A5D468900E42C29 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		5FB91A262A5D497700E42C29 /* EventView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventView-ViewModel.swift"; sourceTree = "<group>"; };
+		5FB91A2B2A5F4D6D00E42C29 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				5FB91A072A56AC3700E42C29 /* Event.swift */,
 				5FB91A092A56AC4B00E42C29 /* Person.swift */,
 				5FB91A0B2A56ADB100E42C29 /* EventsManager.swift */,
+				5FB91A2B2A5F4D6D00E42C29 /* LocationFetcher.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				5FB91A222A5D468900E42C29 /* ListRowView.swift in Sources */,
 				5FB91A112A57FED100E42C29 /* AddEventView.swift in Sources */,
 				5FB919FA2A569F7000E42C29 /* ContentView.swift in Sources */,
+				5FB91A2C2A5F4D6D00E42C29 /* LocationFetcher.swift in Sources */,
 				5FB91A1F2A5D430700E42C29 /* DetailPersonView.swift in Sources */,
 				5FB91A082A56AC3700E42C29 /* Event.swift in Sources */,
 				5FB91A1B2A5CA68600E42C29 /* Base64-Encoding-Decoding.swift in Sources */,
@@ -374,6 +378,7 @@
 				DEVELOPMENT_TEAM = J9BWXBY6SC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to acces your location to save the position when you add a person";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -403,6 +408,7 @@
 				DEVELOPMENT_TEAM = J9BWXBY6SC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to acces your location to save the position when you add a person";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

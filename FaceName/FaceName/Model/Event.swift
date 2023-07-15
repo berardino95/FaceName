@@ -16,7 +16,7 @@ struct Event: Codable, Comparable, Identifiable {
     
     static var emptyExample = Event(name: "Test",date: Date.now, people: [])
     
-    static var example = Event(name: "Test",date: Date.now, people: [Person(firstName: "Mario", lastName: "Rossi", base64Avatar: ""), Person(firstName: "Mario", lastName: "Rossi", base64Avatar: ""), Person(firstName: "Mario", lastName: "Rossi", base64Avatar: "")] )
+    static var example = Event(name: "Test",date: Date.now, people: [Person(firstName: "Mario", lastName: "Rossi", base64Avatar: "", latitude: 0, longitude: 0), Person(firstName: "Mario", lastName: "Rossi", base64Avatar: "", latitude: 0, longitude: 0), Person(firstName: "Mario", lastName: "Rossi", base64Avatar: "", latitude: 0, longitude: 0)] )
 
     static func < (lhs: Event, rhs: Event) -> Bool {
         lhs.date < rhs.date
